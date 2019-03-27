@@ -6,11 +6,11 @@ from user_definition import *
 
 output_file = open(output_file_name, "a")
 # https://developers.google.com/maps/documentation/javascript/get-api-key
-apikey = 'AIzaSyCQ1xH8PuPJ0Bx2K8xON0P2KxRj56bC0bw'
-url = "https://maps.googleapis.com/maps/api/distancematrix/" +
-"json?key={0}&origins={1}&destinations={2}" +
-"&mode=driving&departure_time=now&language=en-EN&sensor=false".format(
-    str(apikey), str(orig_coord), str(dest_coord))
+apikey = 'AIzaSyCi_nEPATYzq5LeeSJQ8eDOkHfQHdUT9Zo'
+url = "https://maps.googleapis.com/maps/api/distancematrix/" +\
+      "json?key=" + str(apikey) +\
+      "&origins=" + str(orig_coord) + "&destinations=" + str(dest_coord) +\
+      "&mode=driving&departure_time=now&language=en-EN&sensor=false"
 result = simplejson.load(urllib.request.urlopen(url))
 driving_time = result['rows'][0]['elements'][0]['duration_in_traffic']['text']
 
