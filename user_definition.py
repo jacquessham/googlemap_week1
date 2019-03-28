@@ -1,6 +1,6 @@
 ec2_address = "ec2-18-236-160-205.us-west-2.compute.amazonaws.com"
 user = "ec2-user"
-key_file = "/.ssh/jjsham_msds694.pem"
+key_file = "/Users/jacquessham/Documents/License/jjsham_msds694.pem"
 git_repo_owner = "MSDS698"
 git_repo_name = "googlemap_week1"
 git_user_id = "jacquessham"
