@@ -20,16 +20,18 @@ def ssh_connection(ssh, ec2_address, user, key_file):
 def create_or_update_environment(ssh):
     stdin, stdout, stderr = \
         ssh.exec_command("conda env create -f "
-                         "~/msds603_instructor/msds603.yml")
+                         "~/" + git_repo_name + "/msds603.yml")
+    print(stdin)
     if (b'already exists' in stderr.read()):
         stdin, stdout, stderr = \
             ssh.exec_command("conda env update -f "
-                             "~/msds603_instructor/msds603.yml")
+                             "~/" + git_repo_name + "/msds603.yml")
 
 
 def git_clone(ssh):
     # ---- HOMEWORK ----- #
     stdin, stdout, stderr = ssh.exec_command("git --version")
+    print(stdout.read())
     if (b"git version 2.14.5" is stderr.read()):
         git_clone_command = "git clone https://github.com/" + \
                             git_user_id + "/" + git_repo_name + ".git"
